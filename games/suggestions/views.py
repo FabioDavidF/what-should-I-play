@@ -43,6 +43,6 @@ def db(request):
             tags=tags
         )
         print(f'{name} Added to database!')
-        sleep(1) #Fucking gay ass pussy ass low computing power ass shitty ass API server
+        sleep(1.1) #Fucking gay ass pussy ass low computing power ass shitty ass API server
   
     return HttpResponse('Success')
