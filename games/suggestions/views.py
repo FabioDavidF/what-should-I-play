@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests, json
 import os
-from models import Game
+from .models import Game
+from time import sleep
 
 # Create your views here.
 
@@ -19,6 +20,7 @@ def db(request):
         lista.append(app)
     
     for app in lista:
+        print(f'sending request to {app}')
         result = requests.get(f'https://steamspy.com/api.php?request=appdetails&appid={app}')
         json_obj = result.json()
         name = json_obj['name']
@@ -42,6 +44,7 @@ def db(request):
             image=image,
             tags=tags
         )
+        game.save()
         print(f'{name} Added to database!')
         sleep(1.1) #Fucking gay ass pussy ass low computing power ass shitty ass API server
   
