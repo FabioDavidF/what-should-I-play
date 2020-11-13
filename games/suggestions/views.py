@@ -20,7 +20,7 @@ def db(request):
     
     for app in lista:
         result = requests.get(f'https://steamspy.com/api.php?request=appdetails&appid={app}')
-        json_obj = json.loads(result)
+        json_obj = result.json()
         name = json_obj['name']
         app_id = json_obj['appid']
         price = json_obj['price']
