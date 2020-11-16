@@ -49,3 +49,10 @@ def db(request):
         sleep(1.1) #Fucking gay ass pussy ass low computing power ass shitty ass API server
   
     return HttpResponse('Success')
+
+
+def test(request):
+    tags = request.GET.get('tags')
+    print(tags)
+    print(type(tags))
+    return HttpResponse(f'<h1>{tags}<h1>')
