@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import requests, json
+import requests, json, operator
 import os
 from .models import Game
 from time import sleep
@@ -51,8 +51,32 @@ def db(request):
     return HttpResponse('Success')
 
 
-def test(request):
-    tags = request.GET.get('tags')
-    print(tags)
-    print(type(tags))
-    return HttpResponse(f'<h1>{tags}<h1>')
+def getGames(request):
+    request_tags = request.GET.get('tags').split(',')
+    print(request_tags)
+    tag_amount = len(request_tags)
+    games = Game.objects.all()
+    dic = {}
+
+    for game in games:
+        score = 0
+        for tag in request_tags:
+            if tag in game.tags:
+                score += 1
+        if score > 0:
+            dic[f'{game.id}'] = score
+    
+    sorted_dic = sorted(dic.items(), key=operator.itemgetter(1), reverse=True)
+
+    fulfilled_list = []
+    minimum = 1
+    for game in sorted_dic:
+        if game[1] >= minimum:
+            fulfilled_list.append(game) 
+    
+    limited_list = fulfilled_list[0:10]
+    print(limited_list)
+        
+
+    return HttpResponse(status=200)
+
