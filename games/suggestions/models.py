@@ -10,4 +10,7 @@ class Game(models.Model):
     image = models.URLField(blank=True)
     tags = models.CharField(max_length=1000)
 
+    def __str__(self):
+        return self.name
+
     

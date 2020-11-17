@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 import requests, json, operator
 import os
 from .models import Game
@@ -68,15 +68,32 @@ def getGames(request):
     
     sorted_dic = sorted(dic.items(), key=operator.itemgetter(1), reverse=True)
 
-    fulfilled_list = []
-    minimum = 1
+    sorted_list = []
     for game in sorted_dic:
-        if game[1] >= minimum:
-            fulfilled_list.append(game) 
+        sorted_list.append(game) 
     
-    limited_list = fulfilled_list[0:10]
+    limited_list = sorted_list[0:10]
     print(limited_list)
-        
 
-    return HttpResponse(status=200)
+    games_list = []
+    for game in limited_list:
+        game_obj = Game.objects.get(pk=game[0])
+        price = game_obj.price / 100 #Is saved in cents in DB, converting to dollars
+        game_dict = {
+            'name': game_obj.name,
+            'image': game_obj.image,
+            'tags': game_obj.tags,
+            'price': price
+        }
+
+        games_list.append(game_dict)
+    
+    print(games_list)
+
+    if len(limited_list) == 0:
+        return JsonResponse({'has_items': False})
+    else:
+        return JsonResponse({'has_items': True, 'games': games_list})
+       
+
 
