@@ -11,6 +11,9 @@ def index(request):
     return HttpResponse('<h1>Hi<h1>')
 
 def db(request):
+    """
+    Function used to construct database via the steamspy and the steamcdn API's
+    """
     f = open('suggestions/tops.txt', 'r')
     string = f.read()
 
@@ -52,6 +55,10 @@ def db(request):
 
 
 def getGames(request):
+    """
+    Returns a json response with a list of games that best match
+    the tags given in the 'tags' parameter on the query string
+    """
     request_tags = request.GET.get('tags').split(',')
     print(request_tags)
     tag_amount = len(request_tags)
@@ -95,5 +102,3 @@ def getGames(request):
     else:
         return JsonResponse({'has_items': True, 'games': games_list})
        
-
-
