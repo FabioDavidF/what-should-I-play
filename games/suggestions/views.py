@@ -8,7 +8,7 @@ from time import sleep
 # Create your views here.
 
 def index(request):
-    return render(request, 'suggestions/layout.html')
+    return render(request, 'suggestions/index.html')
 
 def db(request):
     """

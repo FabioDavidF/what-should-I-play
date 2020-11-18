@@ -1,0 +1,45 @@
+{% extends 'suggestions/layout.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'suggestions/index.css' %}">
+{% endblock %}
+{% block script %}
+<script src="{% static 'suggestions/script.js' %}"></script>
+{% endblock %}
+{% block body %}
+    <div class="first">
+        <div class="intro">
+            <p class='welcome'>Welcome to What Should I Play</p>
+            <p class='welcome2'>Don't know what to play? <br>
+            Answer a couple of questions, select a couple of tags <br>
+            and we will suggest you some games!
+            </p>
+        </div>
+
+        <div class="started-button">
+            <button>
+                Get Started
+            </button>
+        </div>
+    </div>
+
+    <div class="second">
+        <div class="player-choice">
+
+            <p class="player-text">Are you looking for a, primarily,<br> Multiplayer or Single Player Experience?</p>
+
+            <div class="multiplayer-button">
+                <button>
+                    Multiplayer
+                </button>
+            </div>
+
+            <div class="singleplayer-button">
+                <button>
+                    Single Player
+                </button>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}
