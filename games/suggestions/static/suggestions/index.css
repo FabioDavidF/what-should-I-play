@@ -70,6 +70,7 @@ body {
 
 .started-button button:hover {
     border-color: #BB86FC;
+    cursor: pointer;
 }
 
 .started-button button:focus {
@@ -83,10 +84,12 @@ body {
     font-size: 2rem;
     opacity: 87%;
     max-width: 100%;
+    float: left;
 }
 
 .player-choice {
-    margin: 20vh;
+    margin: 30vh;
+
 }
 
 .multiplayer-button button, .singleplayer-button button {
@@ -98,7 +101,7 @@ body {
     border-width: 0.2rem;;
     border-radius: 2rem;
     padding: 1.2rem;
-    width: 50%;
+    width: 70%;
     background: none;
     color: white;
     font-size: 2rem;
@@ -112,6 +115,7 @@ body {
 
 .multiplayer-button button:hover, .singleplayer-button button:hover {
     border-color: #BB86FC;
+    cursor: pointer;
 }
 
 .multiplayer-button button:focus, .singleplayer-button button:focus {
