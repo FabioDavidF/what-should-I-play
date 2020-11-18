@@ -60,16 +60,26 @@ def getGames(request):
     the tags given in the 'tags' parameter on the query string
     """
     request_tags = request.GET.get('tags').split(',')
+    essential_tags = request.GET.get('essentials').split(',')
+    print(essential_tags)
     print(request_tags)
     tag_amount = len(request_tags)
     games = Game.objects.all()
     dic = {}
 
+    
     for game in games:
+        essential_score = 0
         score = 0
-        for tag in request_tags:
-            if tag in game.tags:
-                score += 1
+        for essential in essential_tags:
+            if essential in game.tags:
+                essential_score += 1
+
+        if essential_score == len(essential_tags):
+            for tag in request_tags:
+                if tag in game.tags:
+                    score += 1
+
         if score > 0:
             dic[f'{game.id}'] = score
     
