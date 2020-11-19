@@ -195,7 +195,10 @@ body {
     text-align: center;
 }
 
-
+.tag-card:hover {
+    border-color: #BB86FC;
+    cursor: pointer;
+}
 
 
 

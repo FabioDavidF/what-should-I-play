@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
         loadTags('coop');
     }
 
+    // Singleplayer button onlick to scroll to tags
+    singleplayer_button.onclick = () => {
+        tags_canvas.style.display = 'block';
+        tags_canvas.scrollIntoView(true);
+        loadTags('singleplayer');
+    }
+
     function loadTags(kind) {
         if (kind === 'competitive') {
             var tags = ['FPS', 'MOBA', 'Battle Royale', 'Sports', 'Fighting', 'Survival']
@@ -53,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
             var card = document.createElement('div');
             card.className = 'tag-card';
             card.innerHTML = `${tag}`;
+            card.onclick = () => {
+                card.className = 'tag-card selected'
+            }
            tags_grid.appendChild(card) 
         }
     }
