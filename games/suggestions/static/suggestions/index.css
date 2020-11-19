@@ -18,6 +18,11 @@ body {
 
 .first {
     height: 100vh;
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
 }
 
 .intro {
@@ -25,11 +30,6 @@ body {
     font-size: 2rem;
     margin-top: 20vh;
 
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
 }
 
 .intro .welcome {
@@ -44,11 +44,6 @@ body {
 .started-button {
     margin-top: 15rem;
     text-align: center;
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
 }
 
 .started-button button {
@@ -122,10 +117,83 @@ body {
     outline: none;
 }
 
+.third-multi {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 87%;
+    max-width: 100%;
+    float: left;
+}
 
+.multi-choice {
+    margin: 30vh;
 
+}
 
+.competitive-button button, .coop-button button {
+    border-color: white;
+    -webkit-transition: border-color 150ms ease-in;
+    -moz-transition: border-color 150ms ease-in; 
+    -o-transition: border-color 150ms ease-in; 
+    transition: border-color 150ms ease-in;
+    border-width: 0.2rem;;
+    border-radius: 2rem;
+    padding: 1.2rem;
+    width: 70%;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    justify-content: center;
+    font-family: inherit;
+}
 
+.coop-button button {
+    margin-top: 1rem;
+}
+
+.competitive-button button:hover, .coop-button button:hover {
+    border-color: #BB86FC;
+    cursor: pointer;
+}
+
+.competitive-button button:focus, .coop-button button:focus {
+    outline: none;
+}
+
+.tags-canvas {
+    height: 100vh;
+    width: 100vw;
+    font-size: 2rem;
+    
+    max-width: 100%;
+    float: left;
+}
+
+.canvas-text {
+    opacity: 87%;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.tags-grid {
+    margin: 10vh;
+    display: grid;
+    grid-gap: 2rem;
+    justify-content: space-evenly;
+    grid-template-columns:  15vw 15vw 15vw;
+}
+
+.tag-card {
+    opacity: 60%;
+    padding: 1rem;
+    width: 15vw;
+    border-style: solid;
+    border-color: white;
+    border-radius: 2rem;
+    text-align: center;
+}
 
 
 
