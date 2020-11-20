@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('competitive')
+        loadSubmitter('competitive')
     }
 
     // Coop button onclick to scroll to tags
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('coop');
+        loadSubmitter('coop')
     }
 
     // Singleplayer button onlick to scroll to tags
@@ -45,10 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('singleplayer');
-        loadSubmitter('tags')
+        loadSubmitter('singleplayer')
     }
 
     function loadTags(kind) {
+        // Clearing tags, just in case
+        tags_grid.innerHTML = ''
+
         if (kind === 'competitive') {
             var tags = ['FPS', 'MOBA', 'Battle Royale', 'Sports', 'Fighting', 'Survival']
         } else if (kind === 'coop') {
@@ -79,8 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadSubmitter(kind) {
-        const parent = document.createElement('div')
-        parent.className = 'submitter-parent'
+        parent = document.querySelector('.submitter-parent')
+        // Clearing previous button just in case
+        parent.innerHTML = ''
         child = document.createElement('div')
         child.className = 'submitter'
         child.innerHTML = 'Get Games'
@@ -88,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selected_elements = document.querySelectorAll('.selected')
             const selected_tags = []
             for (element of selected_elements) {
-                const value = element.innerHTML.replace(/ /g, '')
+                const value = element.innerHTML.replace(/ /g, '').toLowerCase()
                 selected_tags.push(value)
             }
             var tags_string = ''
@@ -96,10 +102,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 var tags_string = tags_string.concat(`${tag},`)
             }
             console.log(tags_string)
+            if (kind === 'singleplayer') {
+                fetch(`get-games/?essentials=singleplayer&tags=${tags_string}`)
+                .then(response => response.json())
+                .then(games => console.log(games))
+            }
+            else if (kind === 'competitive') {
+                fetch(`get-games/?essentials=competitive,e-sports&tags=${tags_string}`)
+                .then(response => response.json())
+                .then(games => console.log(games))
+            } else if (kind === 'coop') {
+                fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
+                .then(response => response.json())
+                .then(games => console.log(games))
+            }
+            
         }
         parent.appendChild(child)
-        tags_canvas.appendChild(parent)
-
-        
     }
 })
