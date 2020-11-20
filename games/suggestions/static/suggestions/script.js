@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selected_elements = document.querySelectorAll('.selected')
             const selected_tags = []
             for (element of selected_elements) {
-                const value = element.innerHTML
+                const value = element.innerHTML.replace(/ /g, '')
                 selected_tags.push(value)
             }
             var tags_string = ''
