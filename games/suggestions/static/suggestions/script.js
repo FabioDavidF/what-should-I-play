@@ -84,7 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
         child = document.createElement('div')
         child.className = 'submitter'
         child.innerHTML = 'Get Games'
+        child.onclick = () => {
+            const selected_elements = document.querySelectorAll('.selected')
+            const selected_tags = []
+            for (element of selected_elements) {
+                const value = element.innerHTML
+                selected_tags.push(value)
+            }
+            var tags_string = ''
+            for (tag of selected_tags) {
+                var tags_string = tags_string.concat(`${tag},`)
+            }
+            console.log(tags_string)
+        }
         parent.appendChild(child)
         tags_canvas.appendChild(parent)
+
+        
     }
 })
