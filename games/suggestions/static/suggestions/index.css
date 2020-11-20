@@ -166,7 +166,7 @@ body {
     height: 100vh;
     width: 100vw;
     font-size: 2rem;
-    
+    justify-content: center;
     max-width: 100%;
     float: left;
 }
@@ -193,6 +193,10 @@ body {
     border-color: white;
     border-radius: 2rem;
     text-align: center;
+    -webkit-transition: border-color 200ms ease-in;
+    -moz-transition: border-color 200ms ease-in; 
+    -o-transition: border-color 200ms ease-in; 
+    transition: border-color 200ms ease-in;
 }
 
 .tag-card:hover {
@@ -200,9 +204,35 @@ body {
     cursor: pointer;
 }
 
+.submitter-parent {
+    display: flex;
+    justify-content: center;
+}
 
+.submitter {
+    opacity: 87%;
+    padding: 1rem;
+    width: 30vw;
+    border-style: solid;
 
+    border-radius: 2rem;
+    text-align: center;
 
+    -webkit-transition: border-color 200ms ease-in;
+    -moz-transition: border-color 200ms ease-in; 
+    -o-transition: border-color 200ms ease-in; 
+    transition: border-color 200ms ease-in;
+}
+
+.submitter:hover {
+    border-color: #BB86FC;
+    color: #BB86FC;
+    cursor: pointer;
+}
+
+.selected {
+    border-color: #BB86FC;
+}
 
 
 

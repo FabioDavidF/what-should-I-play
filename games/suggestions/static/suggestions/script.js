@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('singleplayer');
+        loadSubmitter('tags')
     }
 
     function loadTags(kind) {
@@ -60,11 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
             var card = document.createElement('div');
             card.className = 'tag-card';
             card.innerHTML = `${tag}`;
-            card.onclick = () => {
-                card.className = 'tag-card selected'
-            }
-           tags_grid.appendChild(card) 
+            tags_grid.appendChild(card) 
+        }
+
+        // Giving onclick for each tag, no idea why the () => syntax wasn't working
+        var all_tags = document.querySelectorAll('.tag-card');
+        for (var i = 0; i < all_tags.length; i++) {
+            var tag = all_tags[i];
+            tag.onclick = function() {
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected')
+                } else {
+                    this.classList.add('selected');
+                }
+            };
         }
     }
 
+    function loadSubmitter(kind) {
+        const parent = document.createElement('div')
+        parent.className = 'submitter-parent'
+        child = document.createElement('div')
+        child.className = 'submitter'
+        child.innerHTML = 'Get Games'
+        parent.appendChild(child)
+        tags_canvas.appendChild(parent)
+    }
 })
