@@ -83,8 +83,10 @@ body {
 }
 
 .player-choice {
-    margin: 30vh;
-
+    margin-top: 20vh;
+    margin-bottom: 15vh;
+    margin-left: 25vw;
+    margin-right: 25vw
 }
 
 .multiplayer-button button, .singleplayer-button button {
@@ -129,7 +131,6 @@ body {
 
 .multi-choice {
     margin: 30vh;
-
 }
 
 .competitive-button button, .coop-button button {
@@ -240,8 +241,12 @@ body {
 
 
 
-
-
+/* Responsiveness */
+@media only screen and (max-width:1080px) {
+    .tag-card {
+        font-size: 1.5rem;
+    }
+}
 
 
 
