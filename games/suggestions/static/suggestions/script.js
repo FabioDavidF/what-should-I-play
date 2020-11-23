@@ -92,30 +92,36 @@ document.addEventListener('DOMContentLoaded', () => {
         child.innerHTML = 'Get Games'
         child.onclick = () => {
             const selected_elements = document.querySelectorAll('.selected')
-            const selected_tags = []
-            for (element of selected_elements) {
-                const value = element.innerHTML.replace(/ /g, '').toLowerCase()
-                selected_tags.push(value)
+
+            if (selected_elements.length !== 0) {
+                const selected_tags = []
+                for (element of selected_elements) {
+                    const value = element.innerHTML.replace(/ /g, '').toLowerCase()
+                    selected_tags.push(value)
+                }
+                var tags_string = ''
+                for (tag of selected_tags) {
+                    var tags_string = tags_string.concat(`${tag},`)
+                }
+                console.log(tags_string)
+                if (kind === 'singleplayer') {
+                    fetch(`get-games/?essentials=singleplayer&tags=${tags_string}`)
+                    .then(response => response.json())
+                    .then(games => console.log(games))
+                }
+                else if (kind === 'competitive') {
+                    fetch(`get-games/?essentials=competitive,e-sports&tags=${tags_string}`)
+                    .then(response => response.json())
+                    .then(games => console.log(games))
+                } else if (kind === 'coop') {
+                    fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
+                    .then(response => response.json())
+                    .then(games => console.log(games))
+                }
+            } else {
+                alert('Please select some tags')
             }
-            var tags_string = ''
-            for (tag of selected_tags) {
-                var tags_string = tags_string.concat(`${tag},`)
-            }
-            console.log(tags_string)
-            if (kind === 'singleplayer') {
-                fetch(`get-games/?essentials=singleplayer&tags=${tags_string}`)
-                .then(response => response.json())
-                .then(games => console.log(games))
-            }
-            else if (kind === 'competitive') {
-                fetch(`get-games/?essentials=competitive,e-sports&tags=${tags_string}`)
-                .then(response => response.json())
-                .then(games => console.log(games))
-            } else if (kind === 'coop') {
-                fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
-                .then(response => response.json())
-                .then(games => console.log(games))
-            }
+            
             
         }
         parent.appendChild(child)
