@@ -5,7 +5,6 @@ import os
 from .models import Game
 from time import sleep
 
-# Create your views here.
 
 def index(request):
     return render(request, 'suggestions/index.html')
@@ -78,6 +77,7 @@ def getGames(request):
         if essential_score == len(essential_tags):
             for tag in request_tags:
                 if tag in game.tags:
+                    print(f'{game.name} has {tag}')
                     score += 1
 
         if score > 0:

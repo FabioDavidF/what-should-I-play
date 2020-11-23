@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (kind === 'competitive') {
             var tags = ['FPS', 'MOBA', 'Battle Royale', 'Sports', 'Fighting', 'Survival']
         } else if (kind === 'coop') {
-            var tags = ['FPS', 'RPG', 'Open World', 'Sandbox', 'Building', 'Survival', 'Looter Shooter', 'Driving', 'Story Rich', 'Loot']
+            var tags = ['FPS', 'RPG', 'Open World', 'Sandbox', 'Building', 'Survival', 'Looter Shooter', 'Driving', 'Story Rich', 'Loot', 'MMO']
         } else if (kind === 'singleplayer') {
             var tags = ['RPG', 'FPS', 'Open World', 'Hack And Slash', 'Looter Shooter', 'Survival', 'Shooter', 'Story Rich', 'Moddable', 'Exploration', 'Realistic', 'Adventure', 'Stealth', 'Anime']
         }
@@ -103,20 +103,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (tag of selected_tags) {
                     var tags_string = tags_string.concat(`${tag},`)
                 }
+                var tags_string = tags_string.slice(0, -1)
                 console.log(tags_string)
                 if (kind === 'singleplayer') {
                     fetch(`get-games/?essentials=singleplayer&tags=${tags_string}`)
                     .then(response => response.json())
-                    .then(games => console.log(games))
+                    .then(games => {
+                        console.log(games)
+                        const games_array = games.games
+                        games_array.forEach(element => {
+                            loadGame(element)
+                        });
+                    })
                 }
                 else if (kind === 'competitive') {
                     fetch(`get-games/?essentials=competitive,e-sports&tags=${tags_string}`)
                     .then(response => response.json())
-                    .then(games => console.log(games))
+                    .then(games => {
+                        console.log(games)
+                        const games_array = games.games
+                        games_array.forEach(element => {
+                            loadGame(element)
+                        });
+                    })
                 } else if (kind === 'coop') {
                     fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
                     .then(response => response.json())
-                    .then(games => console.log(games))
+                    .then(games => {
+                        console.log(games)
+                        const games_array = games.games
+                        games_array.forEach(element => {
+                            loadGame(element)
+                        });
+                    })
                 }
             } else {
                 alert('Please select some tags')
@@ -127,3 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
         parent.appendChild(child)
     }
 })
+
+function loadGame(game) {
+    let name = game.name
+    let price = game.price
+    let image = game.image
+    let tags = game.tags
+    console.log(name)
+    // Do stuff with games ooga booga procrastination do it later
+}
