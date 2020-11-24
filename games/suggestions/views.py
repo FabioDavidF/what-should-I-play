@@ -149,11 +149,32 @@ def descriptions(request):
 
 def descriptions2(request):
     games = Game.objects.all()
-    nav = Chrome()
+    options = Options()
+    options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
+    nav = Chrome(chrome_options=options)
     for game in games:
         nav.get(f'https://store.steampowered.com/app/{game.app_id}')
-        desc = nav.find_element_by_class_name('game_description_snippet').text
-        game.description = desc
-        game.save()
+        try:
+            desc = nav.find_element_by_class_name('game_description_snippet').text
+            game.description = desc
+            game.save()
+            print(f'{game.name} updated')
+        except:
+            print('Exception 1')
+            try:
+                select = nav.find_element_by_id('ageYear')
+                for option in select.find_elements_by_tag_name('option'):
+                    if option.text == '1990':
+                        option.click()
+                        break
+                access = nav.find_element_by_xpath('//*[@id="app_agegate"]/div[1]/div[3]/a[1]')
+                access.click()
+                sleep(1)
+                desc = nav.find_element_by_class_name('game_description_snippet').text
+                game.description = desc
+                game.save()
+                print(f'{game.name} updated')
+            except Exception as e:
+                print(e)
     return HttpResponse(status=200)
         
