@@ -103,7 +103,8 @@ def getGames(request):
             'name': game_obj.name,
             'image': game_obj.image,
             'tags': game_obj.tags,
-            'price': price
+            'price': price,
+            'description': game_obj.description
         }
 
         games_list.append(game_dict)

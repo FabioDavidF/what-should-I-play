@@ -9,10 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
     const tags_grid = document.querySelector('.tags-grid')
+    const games_canvas = document.querySelector('.fourth')
+    const games_canvas_inner = document.querySelector('.games')
 
     player_choice.style.display = 'none';
     multi_choice.style.display = 'none';
     tags_canvas.style.display = 'none';
+    games_canvas.style.display = 'none';
 
     // Started button onclick to scroll to player choice
     started_button.onclick = () => {
@@ -111,9 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(games => {
                         console.log(games)
                         const games_array = games.games
+                        games_canvas_inner.innerHTML = ''
                         games_array.forEach(element => {
-                            loadGame(element)
+                            loadGame(element);
                         });
+                        
+                        games_canvas.style.display = 'block';
+                        games_canvas.scrollIntoView(true);
                     })
                 }
                 else if (kind === 'competitive') {
@@ -122,9 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(games => {
                         console.log(games)
                         const games_array = games.games
+                        games_canvas_inner.innerHTML = ''
                         games_array.forEach(element => {
                             loadGame(element)
                         });
+                        games_canvas.style.display = 'block';
+                        games_canvas.scrollIntoView(true);
                     })
                 } else if (kind === 'coop') {
                     fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
@@ -132,26 +142,46 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(games => {
                         console.log(games)
                         const games_array = games.games
+                        games_canvas_inner.innerHTML = ''
                         games_array.forEach(element => {
                             loadGame(element)
                         });
+                        games_canvas.style.display = 'block';
+                        games_canvas.scrollIntoView(true);
                     })
                 }
             } else {
+                // Do a proper alert or disable with onclick event listeners to check the amount of selected class name containing elements please please fabio don't forget this part please
                 alert('Please select some tags')
-            }
-            
-            
+            }  
         }
         parent.appendChild(child)
     }
 })
 
 function loadGame(game) {
-    let name = game.name
-    let price = game.price
-    let image = game.image
-    let tags = game.tags
-    console.log(name)
     // Do stuff with games ooga booga procrastination do it later
+    const canvas = document.querySelector('.games')
+    const element = document.createElement('div')
+    element.className = 'game'
+    const element_image = document.createElement('div')
+    const image_child = document.createElement('img')
+    element_image.className = 'game-image'
+    image_child.src = game.image
+    element_image.appendChild(image_child)
+    element.appendChild(element_image)
+    const element_name = document.createElement('p')
+    element_name.innerHTML = game.name
+    element_name.className = 'game-name'
+    element.appendChild(element_name)
+    const element_price = document.createElement('p')
+    element_price.innerHTML = `Steam Price: $${game.price}`
+    element_price.className = 'game-price'
+    element.appendChild(element_price)
+    const element_description = document.createElement('p')
+    element_description.innerHTML = game.description
+    element_description.className = 'game-description'
+    element.appendChild(element_description)
+
+    canvas.appendChild(element)
 }
