@@ -251,7 +251,24 @@ body {
     margin-right: 10vw;
 }
 
+.game {
+    margin-bottom: 5vh;
+    min-height: 100vh;
+}
 
+.game-name {
+    font-size: 3rem;
+    opacity: 87%;
+}
+
+.game-price {
+    opacity: 87%;
+    font-size: 2rem;
+}
+
+.game-description {
+    opacity: 60%;
+}
 
 
 /* Responsiveness */

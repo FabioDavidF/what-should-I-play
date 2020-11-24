@@ -164,24 +164,24 @@ function loadGame(game) {
     const canvas = document.querySelector('.games')
     const element = document.createElement('div')
     element.className = 'game'
+    const element_name = document.createElement('p')
+    element_name.innerHTML = game.name
+    element_name.className = 'game-name'
+    element.appendChild(element_name)
     const element_image = document.createElement('div')
     const image_child = document.createElement('img')
     element_image.className = 'game-image'
     image_child.src = game.image
     element_image.appendChild(image_child)
     element.appendChild(element_image)
-    const element_name = document.createElement('p')
-    element_name.innerHTML = game.name
-    element_name.className = 'game-name'
-    element.appendChild(element_name)
-    const element_price = document.createElement('p')
-    element_price.innerHTML = `Steam Price: $${game.price}`
-    element_price.className = 'game-price'
-    element.appendChild(element_price)
     const element_description = document.createElement('p')
     element_description.innerHTML = game.description
     element_description.className = 'game-description'
     element.appendChild(element_description)
+    const element_price = document.createElement('p')
+    element_price.innerHTML = `Steam Price: $${game.price}`
+    element_price.className = 'game-price'
+    element.appendChild(element_price)
 
     canvas.appendChild(element)
 }

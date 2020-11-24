@@ -5,6 +5,8 @@ import os
 from .models import Game
 from time import sleep
 from bs4 import BeautifulSoup
+from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.options import Options
 
 
 def index(request):
@@ -144,3 +146,14 @@ def descriptions(request):
                 print(f'Error to json at app {app_id}')
             
     return HttpResponse(status=200)
+
+def descriptions2(request):
+    games = Game.objects.all()
+    nav = Chrome()
+    for game in games:
+        nav.get(f'https://store.steampowered.com/app/{game.app_id}')
+        desc = nav.find_element_by_class_name('game_description_snippet').text
+        game.description = desc
+        game.save()
+    return HttpResponse(status=200)
+        
