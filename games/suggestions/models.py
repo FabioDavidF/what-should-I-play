@@ -9,6 +9,7 @@ class Game(models.Model):
     price = models.FloatField()
     image = models.URLField(blank=True)
     tags = models.CharField(max_length=1000)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name

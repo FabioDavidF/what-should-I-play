@@ -4,11 +4,14 @@ import requests, json, operator
 import os
 from .models import Game
 from time import sleep
+from bs4 import BeautifulSoup
 
 
 def index(request):
     return render(request, 'suggestions/index.html')
 
+
+# Function I made to construct the games database from steamspy API
 def db(request):
     """
     Function used to construct database via the steamspy and the steamcdn API's
@@ -111,4 +114,32 @@ def getGames(request):
         return JsonResponse({'has_items': False})
     else:
         return JsonResponse({'has_items': True, 'games': games_list})
-       
+
+
+# Function I used to get games description from the steampowered API
+def descriptions(request):
+    games = Game.objects.all()
+    bad = 0
+    counter = 0
+    for game in games:
+        counter += 1
+        if counter >= 270:
+            app_id = game.app_id
+            response = requests.get(f'https://store.steampowered.com/api/appdetails?appids={app_id}')
+            try:
+                json = response.json()
+                if json[f'{app_id}']['success'] == True:
+                    raw = json[f'{app_id}']['data']['detailed_description']
+                    clean = BeautifulSoup(raw, 'lxml').text
+                    game.description = clean
+                    game.save()
+                    print(f'{game.name} Description added!')
+                    sleep(1.5)
+                else:
+                    bad += 1
+                    print(f'NO API AVAILABLE AT {app_id}')
+                    print(bad)
+            except:
+                print(f'Error to json at app {app_id}')
+            
+    return HttpResponse(status=200)
