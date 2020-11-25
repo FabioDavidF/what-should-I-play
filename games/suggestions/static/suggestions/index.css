@@ -77,12 +77,13 @@ body {
     width: 100vw;
     text-align: center;
     font-size: 2rem;
-    opacity: 87%;
+    
     max-width: 100%;
     float: left;
 }
 
 .player-choice {
+    opacity: 87%;
     margin-top: 20vh;
     margin-bottom: 15vh;
     margin-left: 25vw;
@@ -90,6 +91,7 @@ body {
 }
 
 .multiplayer-button button, .singleplayer-button button {
+    opacity: 60%;
     border-color: white;
     -webkit-transition: border-color 150ms ease-in;
     -moz-transition: border-color 150ms ease-in; 
@@ -117,23 +119,26 @@ body {
 
 .multiplayer-button button:focus, .singleplayer-button button:focus {
     outline: none;
+    opacity: 87%
 }
 
 .third-multi {
     height: 100vh;
     width: 100vw;
     text-align: center;
-    font-size: 2rem;
-    opacity: 87%;
     max-width: 100%;
     float: left;
 }
 
 .multi-choice {
-    margin: 30vh;
+    font-size: 2rem;
+    opacity: 87%;
+    margin-top: 30vh;
 }
 
 .competitive-button button, .coop-button button {
+    opacity: 60%;
+    max-width: 50%;
     border-color: white;
     -webkit-transition: border-color 150ms ease-in;
     -moz-transition: border-color 150ms ease-in; 
@@ -334,13 +339,28 @@ body {
 }
 
 
-/* Responsiveness */
-@media only screen and (max-width:1080px) {
+/* Medium sized Responsiveness */
+@media only screen and (max-width:1008px) {
+    .intro .welcome {
+        font-size: 2rem;
+    }
+    .intro .welcome2 {
+        font-size: 1.5rem;
+    }
+
+    .player-choice {
+        margin-top: 20vh;
+        margin-bottom: 15vh;
+        margin-left: 10vw;
+        margin-right: 10vw
+    }
+
     .tag-card {
         font-size: 1.5rem;
     }
     .arrow-child {
         max-width: 15%;
+        margin-left: 40%;
     }
     .arrow-parent {
         margin-top: 20vh;
@@ -353,8 +373,39 @@ body {
     }
 }
 
+/*Mobile Responsiveness*/
+@media only screen and (max-width:479px) {
+    .intro .welcome {
+        font-size: 2rem;
+    }
+    .intro .welcome2{
+        font-size: 1rem;
+    }
+    .started-button button{
+        font-size: 1.5rem;
+    }
+    .second {
+        font-size: 1.5rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .player-choice {
+        margin-bottom: 30vh;
+    }
+    
+    .multiplayer-button button, .singleplayer-button button {
+        font-size: 1.3rem;
+    }
 
+    .multi-text {
+        font-size: 1.5rem;
+    }
 
+    .competitive-button button, .coop-button button {
+        font-size: 1.3rem;
+    }
+}
 
 
 
