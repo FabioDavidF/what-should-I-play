@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const coop_button = document.querySelector('.coop-button');
     const singleplayer_button = document.querySelector('.singleplayer-button');
 
+    
     const player_choice = document.querySelector('.second');
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
@@ -138,12 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log(games)
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
+                        var c = 0
                         games_array.forEach(element => {
-                            loadGame(element);
+                            c++
+                            loadGame(element, c);
                         });
                         
                         games_canvas.style.display = 'block';
-                        games_canvas.scrollIntoView(true);
+                        const first_game = document.getElementById('1')
+                        first_game.scrollIntoView(true);
                     })
                 }
                 else if (kind === 'competitive') {
@@ -153,11 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log(games)
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
+                        var c = 0
                         games_array.forEach(element => {
-                            loadGame(element)
+                            c++
+                            loadGame(element, c)
                         });
                         games_canvas.style.display = 'block';
-                        games_canvas.scrollIntoView(true);
+                        const first_game = document.getElementById('1')
+                        first_game.scrollIntoView(true);
                     })
                 } else if (kind === 'coop') {
                     fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
@@ -166,11 +173,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log(games)
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
+                        var c = 0
                         games_array.forEach(element => {
-                            loadGame(element)
+                            c++
+                            loadGame(element, c)
                         });
                         games_canvas.style.display = 'block';
-                        games_canvas.scrollIntoView(true);
+                        const first_game = document.getElementById('1')
+                        first_game.scrollIntoView(true);
                     })
                 }
             } else {
@@ -180,38 +190,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         parent.appendChild(child)
     }
-})
 
-function loadGame(game) {
-    // Do stuff with games ooga booga procrastination do it later
-    const canvas = document.querySelector('.games')
-    const element = document.createElement('div')
-    element.className = 'game'
-    const element_name = document.createElement('p')
-    element_name.innerHTML = game.name
-    element_name.className = 'game-name'
-    element.appendChild(element_name)
-    const element_image = document.createElement('div')
-    const image_child = document.createElement('img')
-    const redirect_anchor = document.createElement('a')
-    redirect_anchor.href = `https://store.steampowered.com/app/${game.app_id}`
-    element_image.className = 'game-image'
-    image_child.src = game.image
-    redirect_anchor.appendChild(image_child)
-    element_image.appendChild(redirect_anchor)
-    element.appendChild(element_image)
-    const element_description = document.createElement('p')
-    element_description.innerHTML = game.description
-    element_description.className = 'game-description'
-    element.appendChild(element_description)
-    const element_price = document.createElement('p')
-    if (game.price === 0) {
-        element_price.innerHTML = 'Free to Play'
-    } else {
-        element_price.innerHTML = `Steam Price: $${game.price}`
+    function loadGame(game, number) {
+        // Do stuff with games ooga booga procrastination do it later
+        const canvas = document.querySelector('.games')
+        const element = document.createElement('div')
+        element.className = `game`
+        element.id = number
+        const element_name = document.createElement('p')
+        element_name.innerHTML = game.name
+        element_name.className = 'game-name'
+        element.appendChild(element_name)
+        const element_image = document.createElement('div')
+        element_image.className = 'image-parent'
+        const image_child = document.createElement('img')
+        image_child.className = 'image-child'
+        const redirect_anchor = document.createElement('a')
+        redirect_anchor.href = `https://store.steampowered.com/app/${game.app_id}`
+        image_child.src = game.image
+        redirect_anchor.appendChild(image_child)
+        element_image.appendChild(redirect_anchor)
+        element.appendChild(element_image)
+        const element_description = document.createElement('p')
+        element_description.innerHTML = game.description
+        element_description.className = 'game-description'
+        element.appendChild(element_description)
+        const element_price = document.createElement('p')
+        if (game.price === 0) {
+            element_price.innerHTML = 'Free to Play'
+        } else {
+            element_price.innerHTML = `Steam Price: $${game.price}`
+        }
+        element_price.className = 'game-price'
+        element.appendChild(element_price)
+    
+        if (number < 10) {
+            const arrow_parent = document.createElement('div')
+            arrow_parent.className = 'arrow-parent'
+            const arrow_child = document.createElement('img')
+            arrow_child.src = "../../static/suggestions/arrow.png"
+            arrow_child.className = 'arrow-child'
+            arrow_child.onclick = () => {
+                const next_number = number + 1
+                const next_game = document.getElementById(`${next_number}`)
+                next_game.scrollIntoView(true);
+            }
+            arrow_parent.appendChild(arrow_child)
+            element.appendChild(arrow_parent)
+        } else {
+            const intro = document.querySelector('.first')
+            const back = document.createElement('div')
+            back.innerHTML = 'Back to start'
+            back.className = 'back'
+            back.onclick = () => {
+                intro.scrollIntoView(true);
+                setTimeout(() => {clearPage(intro);}, 1500)
+            }
+            element.appendChild(back)
+        }
+        canvas.appendChild(element)
     }
-    element_price.className = 'game-price'
-    element.appendChild(element_price)
-
-    canvas.appendChild(element)
-}
+})
