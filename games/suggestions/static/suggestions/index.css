@@ -254,6 +254,8 @@ body {
 .game {
     margin-bottom: 5vh;
     min-height: 100vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 .game-name {

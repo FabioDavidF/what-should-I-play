@@ -12,25 +12,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const games_canvas = document.querySelector('.fourth')
     const games_canvas_inner = document.querySelector('.games')
 
-    player_choice.style.display = 'none';
-    multi_choice.style.display = 'none';
-    tags_canvas.style.display = 'none';
-    games_canvas.style.display = 'none';
+    function clearPage(exception=0) {
+        player_choice.style.display = 'none';
+        multi_choice.style.display = 'none';
+        tags_canvas.style.display = 'none';
+        games_canvas.style.display = 'none';
+
+        if (exception !== 0) {
+            exception.style.display = 'block';
+        } 
+    }
+
+    clearPage();   
 
     // Started button onclick to scroll to player choice
     started_button.onclick = () => {
+        // Clearing out rest of the site just in case
+        clearPage();
+
         player_choice.style.display = 'block';
         player_choice.scrollIntoView(true);
     }
 
     // Multiplayer button onlick to scroll to multi choice
     multiplayer_button.onclick = () => {
+        // Clearing out rest of the site just in case
+        clearPage(player_choice);
+
         multi_choice.style.display = 'block';
         multi_choice.scrollIntoView(true);
     }
 
     // Competitive button onclick to scroll to respective tags
     competitive_button.onclick = () => {
+        // Clearing out rest of the site just in case
+        clearPage(multi_choice);
+
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('competitive')
@@ -39,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Coop button onclick to scroll to tags
     coop_button.onclick = () => {
+        // Clearing out rest of the site just in case
+        clearPage(multi_choice);
+
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('coop');
@@ -47,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Singleplayer button onlick to scroll to tags
     singleplayer_button.onclick = () => {
+        // Clearing out rest of the site just in case
+        clearPage(player_choice);
+
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
         loadTags('singleplayer');
@@ -182,7 +205,11 @@ function loadGame(game) {
     element_description.className = 'game-description'
     element.appendChild(element_description)
     const element_price = document.createElement('p')
-    element_price.innerHTML = `Steam Price: $${game.price}`
+    if (game.price === 0) {
+        element_price.innerHTML = 'Free to Play'
+    } else {
+        element_price.innerHTML = `Steam Price: $${game.price}`
+    }
     element_price.className = 'game-price'
     element.appendChild(element_price)
 
