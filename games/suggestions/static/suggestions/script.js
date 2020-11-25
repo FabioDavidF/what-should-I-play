@@ -170,9 +170,12 @@ function loadGame(game) {
     element.appendChild(element_name)
     const element_image = document.createElement('div')
     const image_child = document.createElement('img')
+    const redirect_anchor = document.createElement('a')
+    redirect_anchor.href = `https://store.steampowered.com/app/${game.app_id}`
     element_image.className = 'game-image'
     image_child.src = game.image
-    element_image.appendChild(image_child)
+    redirect_anchor.appendChild(image_child)
+    element_image.appendChild(redirect_anchor)
     element.appendChild(element_image)
     const element_description = document.createElement('p')
     element_description.innerHTML = game.description
