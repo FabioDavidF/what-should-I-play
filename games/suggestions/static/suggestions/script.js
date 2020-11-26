@@ -195,12 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Do stuff with games ooga booga procrastination do it later
         const canvas = document.querySelector('.games')
         const element = document.createElement('div')
+        const content_parent = document.createElement('div')
+        content_parent.className = 'content-parent'
         element.className = `game`
         element.id = number
         const element_name = document.createElement('p')
         element_name.innerHTML = game.name
         element_name.className = 'game-name'
-        element.appendChild(element_name)
+        content_parent.appendChild(element_name)
         const element_image = document.createElement('div')
         element_image.className = 'image-parent'
         const image_child = document.createElement('img')
@@ -210,11 +212,11 @@ document.addEventListener('DOMContentLoaded', () => {
         image_child.src = game.image
         redirect_anchor.appendChild(image_child)
         element_image.appendChild(redirect_anchor)
-        element.appendChild(element_image)
+        content_parent.appendChild(element_image)
         const element_description = document.createElement('p')
         element_description.innerHTML = game.description
         element_description.className = 'game-description'
-        element.appendChild(element_description)
+        content_parent.appendChild(element_description)
         const element_price = document.createElement('p')
         if (game.price === 0) {
             element_price.innerHTML = 'Free to Play'
@@ -222,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             element_price.innerHTML = `Steam Price: $${game.price}`
         }
         element_price.className = 'game-price'
-        element.appendChild(element_price)
+        content_parent.appendChild(element_price)
     
         if (number < 10) {
             const arrow_parent = document.createElement('div')
@@ -236,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 next_game.scrollIntoView(true);
             }
             arrow_parent.appendChild(arrow_child)
-            element.appendChild(arrow_parent)
+            content_parent.appendChild(arrow_parent)
         } else {
             const intro = document.querySelector('.first')
             const back = document.createElement('div')
@@ -246,8 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 intro.scrollIntoView(true);
                 setTimeout(() => {clearPage(intro);}, 1500)
             }
-            element.appendChild(back)
+            content_parent.appendChild(back)
         }
+        element.appendChild(content_parent)
         canvas.appendChild(element)
     }
 })
