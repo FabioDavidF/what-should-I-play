@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const started_button = document.querySelector('.started-button');
-    const multiplayer_button = document.querySelector('.multiplayer-button');
-    const competitive_button = document.querySelector('.competitive-button');
-    const coop_button = document.querySelector('.coop-button');
-    const singleplayer_button = document.querySelector('.singleplayer-button');
+    const started_button = document.querySelector('.started-button-button');
+    const multiplayer_button = document.querySelector('.multiplayer-button-button');
+    const competitive_button = document.querySelector('.competitive-button-button');
+    const coop_button = document.querySelector('.coop-button-button');
+    const singleplayer_button = document.querySelector('.singleplayer-button-button');
 
     
     const player_choice = document.querySelector('.second');

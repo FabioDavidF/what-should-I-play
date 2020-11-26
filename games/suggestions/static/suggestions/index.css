@@ -6,7 +6,7 @@ html {
 }  
 
 body {
-    background-image: url('initial_background.jpg');
+    background-image: url('desktop_background.jpg');
     background-color: #121212;
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,10 +52,10 @@ body {
     -moz-transition: border-color 150ms ease-in; 
     -o-transition: border-color 150ms ease-in; 
     transition: border-color 150ms ease-in;
-    border-width: 0.2rem;
+    border-width: 0.15rem;
     opacity: 87%;
     border-radius: 2rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background: none;
     color: white;
     font-size: 2rem;
@@ -84,7 +84,7 @@ body {
 
 .player-choice {
     opacity: 87%;
-    margin-top: 20vh;
+    margin-top: 30vh;
     margin-bottom: 15vh;
     margin-left: 25vw;
     margin-right: 25vw
@@ -97,10 +97,10 @@ body {
     -moz-transition: border-color 150ms ease-in; 
     -o-transition: border-color 150ms ease-in; 
     transition: border-color 150ms ease-in;
-    border-width: 0.2rem;;
+    border-width: 0.15rem;;
     border-radius: 2rem;
     padding: 1.2rem;
-    width: 70%;
+    width: 50%;
     background: none;
     color: white;
     font-size: 2rem;
@@ -138,16 +138,15 @@ body {
 
 .competitive-button button, .coop-button button {
     opacity: 60%;
-    max-width: 50%;
     border-color: white;
     -webkit-transition: border-color 150ms ease-in;
     -moz-transition: border-color 150ms ease-in; 
     -o-transition: border-color 150ms ease-in; 
     transition: border-color 150ms ease-in;
-    border-width: 0.2rem;;
+    border-width: 0.15rem;;
     border-radius: 2rem;
     padding: 1.2rem;
-    width: 70%;
+    width: 25%;
     background: none;
     color: white;
     font-size: 2rem;
@@ -199,6 +198,7 @@ body {
     border-color: white;
     border-radius: 2rem;
     text-align: center;
+    border-width: 0.15rem;
     -webkit-transition: border-color 200ms ease-in;
     -moz-transition: border-color 200ms ease-in; 
     -o-transition: border-color 200ms ease-in; 
@@ -219,10 +219,9 @@ body {
     padding: 1rem;
     width: 30vw;
     border-style: solid;
-
+    border-width: 0.15rem;
     border-radius: 2rem;
     text-align: center;
-
     -webkit-transition: border-color 200ms ease-in;
     -moz-transition: border-color 200ms ease-in; 
     -o-transition: border-color 200ms ease-in; 
@@ -268,7 +267,7 @@ body {
 }
 
 .game-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     opacity: 87%;
     text-align: center;
 }
@@ -288,7 +287,7 @@ body {
 .game-price {
     text-align: center;
     opacity: 87%;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .game-description {
@@ -410,6 +409,7 @@ body {
     .multiplayer-button button, .singleplayer-button button {
         border-width: 0.1rem;
         font-size: 1.3rem;
+        width: 75%;
     }
 
     .multi-text {
@@ -419,6 +419,7 @@ body {
     .competitive-button button, .coop-button button {
         border-width: 0.1rem;
         font-size: 1.3rem;
+        width: 70%;
     }
 
     .tags-canvas {
@@ -428,9 +429,7 @@ body {
     }
     
     .canvas-text {
-        opacity: 87%;
-        font-size: 2rem;
-        text-align: center;
+        font-size: 1.5rem;
     }
     
     .tags-grid {
@@ -475,8 +474,6 @@ body {
     .game-name {
         margin: 0.5rem;
         font-size: 1.5rem;
-        opacity: 87%;
-        text-align: center;
     }
     
     .image-parent {
@@ -492,14 +489,10 @@ body {
     }
     
     .game-price {
-        text-align: center;
-        opacity: 87%;
         font-size: 1rem;
     }
     
     .game-description {
-        opacity: 60%;
-        text-align: center;
         font-size: 0.7rem;
         padding: 5vw;
     }
@@ -511,15 +504,10 @@ body {
     }
     
     .arrow-child {
-        flex: 0 0 auto;
-        justify-content: center;
         width: 5vw;
         margin-left: 47.5%;
     }
     
-    .arrow-child:hover {
-        cursor: pointer;
-    }
     
     .back {
         margin-top: 30vh;      
@@ -528,12 +516,6 @@ body {
         margin-left: 5vw;
         margin-right: 5vw;
     }
-    
-    .back:hover {
-        cursor: pointer;
-        border-color: #BB86FC;
-    }
-
 }
 
 
