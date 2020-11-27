@@ -77,7 +77,6 @@ body {
     width: 100vw;
     text-align: center;
     font-size: 2rem;
-    
     max-width: 100%;
     float: left;
 }
@@ -351,6 +350,7 @@ body {
     .intro .welcome {
         font-size: 2rem;
     }
+
     .intro .welcome2 {
         font-size: 1.5rem;
     }
@@ -365,16 +365,20 @@ body {
     .tag-card {
         font-size: 1.5rem;
     }
+
     .arrow-child {
         max-width: 15%;
         margin-left: 40%;
     }
+
     .arrow-parent {
         margin-top: 20vh;
     }
+
     .image-parent {
         min-width: 50vw;
     }
+
     .image-child {
         margin-right: 10vw; 
     }
@@ -389,13 +393,16 @@ body {
     .intro .welcome {
         font-size: 2rem;
     }
+
     .intro .welcome2{
         font-size: 1rem;
     }
+
     .started-button button{
         border-width: 0.1rem;
         font-size: 1.5rem;
     }
+
     .second {
         font-size: 1.5rem;
         margin-left: 0;
@@ -507,7 +514,6 @@ body {
         width: 5vw;
         margin-left: 47.5%;
     }
-    
     
     .back {
         margin-top: 30vh;      
