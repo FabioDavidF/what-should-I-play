@@ -71,6 +71,31 @@ def getGames(request):
     games = Game.objects.all()
     dic = {}
 
+    tag_values = {
+        'rpg': 5,
+        'fps': 5,
+        'moba': 5,
+        'battleroyale': 5,
+        'sports': 5,
+        'fighting': 5,
+        'openworld': 2,
+        'hackandslash': 1,
+        'lootershooter': 3,
+        'survival': 3,
+        'shooter': 2,
+        'storyrich': 3,
+        'moddable': 1,
+        'exploration': 3,
+        'realistic': 3,
+        'adventure': 1,
+        'stealth': 4,
+        'anime': 5;
+        'sandbox': 3,
+        'building': 2,
+        'driving': 5,
+        'loot': 3,
+        'mmo': 5
+    }
     
     for game in games:
         essential_score = 0
