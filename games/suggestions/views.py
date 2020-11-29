@@ -107,7 +107,6 @@ def getGames(request):
         if essential_score == len(essential_tags):
             for tag in request_tags:
                 if tag in game.tags:
-                    print(f'{game.name} has {tag}')
                     tag_value = tag_values[tag]
                     score += tag_value
 
