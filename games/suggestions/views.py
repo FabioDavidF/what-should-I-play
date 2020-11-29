@@ -89,14 +89,14 @@ def getGames(request):
         'realistic': 3,
         'adventure': 1,
         'stealth': 4,
-        'anime': 5;
+        'anime': 5,
         'sandbox': 3,
         'building': 2,
         'driving': 5,
         'loot': 3,
         'mmo': 5
     }
-    
+
     for game in games:
         essential_score = 0
         score = 0
@@ -108,7 +108,8 @@ def getGames(request):
             for tag in request_tags:
                 if tag in game.tags:
                     print(f'{game.name} has {tag}')
-                    score += 1
+                    tag_value = tag_values[tag]
+                    score += tag_value
 
         if score > 0:
             dic[f'{game.id}'] = score
