@@ -71,7 +71,7 @@ def getGames(request):
     games = Game.objects.all()
     dic = {}
 
-    tag_values = {
+    tag_weights = {
         'rpg': 5,
         'fps': 5,
         'moba': 5,
@@ -105,10 +105,22 @@ def getGames(request):
                 essential_score += 1
 
         if essential_score == len(essential_tags):
-            for tag in request_tags:
-                if tag in game.tags:
-                    tag_value = tag_values[tag]
-                    score += tag_value
+            print(f'{game.name} has essentials')
+            game_tags = game.tags.split(',')
+            for request_tag in request_tags:
+
+                if request_tag in game_tags:
+                    
+                    tag_position = game_tags.index(request_tag)
+                    length = len(game_tags)
+                    max_score = 5
+                    step = max_score / (length - 1)
+                    position_value = (((length-1) - tag_position) * step)
+
+                    print(f'{game.name} has {request_tag} at {tag_position} with a score of {position_value}')
+
+                    tag_weight = tag_weights[request_tag]
+                    score += tag_weight * position_value
 
         if score > 0:
             dic[f'{game.id}'] = score

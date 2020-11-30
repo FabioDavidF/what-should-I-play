@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                 }
                 else if (kind === 'competitive') {
-                    fetch(`get-games/?essentials=competitive,e-sports&tags=${tags_string}`)
+                    fetch(`get-games/?essentials=competitive&tags=${tags_string}`)
                     .then(response => response.json())
                     .then(games => {
                         console.log(games)
