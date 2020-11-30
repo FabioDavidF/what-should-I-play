@@ -140,9 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
+                        const len = games.games.length
                         games_array.forEach(element => {
                             c++
-                            loadGame(element, c);
+                            loadGame(element, c, len);
                         });
                         
                         games_canvas.style.display = 'block';
@@ -158,9 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
+                        const len = games.games.length
                         games_array.forEach(element => {
                             c++
-                            loadGame(element, c)
+                            loadGame(element, c, len)
                         });
                         games_canvas.style.display = 'block';
                         const first_game = document.getElementById('1')
@@ -174,9 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
+                        const len = games.games.length
                         games_array.forEach(element => {
                             c++
-                            loadGame(element, c)
+                            loadGame(element, c, len)
                         });
                         games_canvas.style.display = 'block';
                         const first_game = document.getElementById('1')
@@ -191,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         parent.appendChild(child)
     }
 
-    function loadGame(game, number) {
+    function loadGame(game, number, length) {
         // Do stuff with games ooga booga procrastination do it later
         const canvas = document.querySelector('.games')
         const element = document.createElement('div')
@@ -226,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element_price.className = 'game-price'
         content_parent.appendChild(element_price)
     
-        if (number < 10) {
+        if (number !== length) {
             const arrow_parent = document.createElement('div')
             arrow_parent.className = 'arrow-parent'
             const arrow_child = document.createElement('img')
