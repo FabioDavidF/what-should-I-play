@@ -67,6 +67,8 @@ def getGames(request):
     """
     request_tags = request.GET.get('tags').split(',')
     essential_tags = request.GET.get('essentials').split(',')
+    print(essential_tags)
+    print(request_tags)
     tag_amount = len(request_tags)
     games = Game.objects.all()
     dic = {}
@@ -127,6 +129,7 @@ def getGames(request):
                 essential_score += 1
 
         if essential_score == len(essential_tags):
+            print(f'{game.name} has essentials')
             game_tags = game.tags.split(',')
             for request_tag in request_tags:
 
@@ -138,6 +141,7 @@ def getGames(request):
                     step = max_score / (length - 1)
                     position_value = (((length-1) - tag_position) * step)
 
+                    print(f'{game.name} has {request_tag} at {tag_position} with a score of {position_value}')
 
                     tag_weight = tag_weights[request_tag]
                     score += tag_weight * position_value
@@ -152,6 +156,7 @@ def getGames(request):
         sorted_list.append(game) 
     
     limited_list = sorted_list[0:10]
+    print(limited_list)
 
     games_list = []
     for game in limited_list:
@@ -165,7 +170,10 @@ def getGames(request):
             'description': game_obj.description,
             'app_id': game_obj.app_id
         }
+
         games_list.append(game_dict)
+    
+    print(games_list)
 
     if len(limited_list) == 0:
         return JsonResponse({'has_items': False})
