@@ -3,17 +3,17 @@
 
 ## Description
  What Should I Play is a simple, mobile-responsive, website with the intent of suggesting, by tags, games for those of us who suffer from the ironic lack of games to play amidst the gigantic steam library.
- The design is aimed to be minimalistic and highly focused on User Experience.
+ The design is aimed to be minimalistic and highly focused on User Experience, with most of the work being done on the CSS and UX elements of JavaScript.
+ Therefore, the objective of such work is to create an aplication that gets its job done satisfyingly and effectively
 
 ## Technologies used
 The back-end API was written using django, and the front-end is pure JavaScript / CSS / HTML.
 
 ## How does it work?
-The heart of the project is a function called getGames, which queries the database in a (hopefully) smart way for games matching the tags given, taking in consideration how important a tag is, and its position in how many times it was voted in the steam store (For example: if a game has a tag, but it is the 28th most voted tag for the game, it won't be nearly as important as the game's number 1 tag).
+The heart of the project is the sorting algorithm written in the back-end, which queries the database in a (hopefully) smart way for games matching the tags given, taking in consideration how important a tag is (For example: "adventure" isn't nearly as important as "FPS"), and its position in how many times it was voted in the steam store (For example: if a game has a tag, but it is the 28th most voted tag for the game, it won't be nearly as important as the game's number 1 tag).
 
 ## Database
 It took some thinking to figure out how to construct my own database with information needed from games, the way I did it was using the [steamspy](https://steamspy.com/) API for most info, and since the Steampowered API sucks (and has no good documentation), I made a simple crawler to get each game's short description from the steam store.
-
 
 ## Things I learned with this project
 The most exciting learning experience I've had with the project was actually constructing the database, when getting the general data from the [steamspy](https://steamspy.com/) API I learned how to extract and use data from an external API. And when adding decently readable descriptions, I made my first crawler with [selenium](https://selenium-python.readthedocs.io/) which scoured the steamstore and is even able to bypass those random age checks that steam loves to throw before you can actually get to see the game's info. It was absolutely magical seeing selenium opening and extracting games information from the store automatically
