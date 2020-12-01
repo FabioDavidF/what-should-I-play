@@ -3,6 +3,7 @@
 
 ## Description
  What Should I Play is a simple, mobile-responsive, website with the intent of suggesting, by tags, games for those of us who suffer from the ironic lack of games to play amidst the gigantic steam library.
+ The design is aimed to be minimalistic and highly focused on User Experience.
 
 ## Technologies used
 The back-end API was written using django, and the front end is pure JavaScript / CSS / HTML.
