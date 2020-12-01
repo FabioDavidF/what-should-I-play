@@ -12,7 +12,7 @@ The back-end API was written using django, and the front-end is pure JavaScript 
 ## How does it work?
 The heart of the project is the sorting algorithm written in the back-end, which queries the database in a (hopefully) smart way for games matching the tags given, taking in consideration how important a tag is (For example: "adventure" isn't nearly as important as "FPS"), and its position in how many times it was voted in the steam store (For example: if a game has a tag, but it is the 28th most voted tag for the game, it won't be nearly as important as the game's number 1 tag).
 
-[Demo](https://i.postimg.cc/MpDd00qQ/WSIP-demo.gif)
+<img src="WSIP-demo.gif?raw=true">
 
 ## Database
 It took some thinking to figure out how to construct my own database with information needed from games, the way I did it was using the [steamspy](https://steamspy.com/) API for most info, and since the Steampowered API sucks (and has no good documentation), I made a simple crawler to get each game's short description from the steam store.
