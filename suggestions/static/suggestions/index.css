@@ -85,17 +85,17 @@ body {
     opacity: 87%;
     margin-top: 30vh;
     margin-bottom: 15vh;
-    margin-left: 25vw;
-    margin-right: 25vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .multiplayer-button button, .singleplayer-button button {
     opacity: 60%;
     border-color: white;
-    -webkit-transition: border-color 150ms ease-in;
-    -moz-transition: border-color 150ms ease-in; 
-    -o-transition: border-color 150ms ease-in; 
-    transition: border-color 150ms ease-in;
+    -webkit-transition: border-color, opacity 150ms ease-in;
+    -moz-transition: border-color, opacity 150ms ease-in; 
+    -o-transition: border-color, opacity 150ms ease-in; 
+    transition: border-color, opacity 150ms ease-in;
     border-width: 0.15rem;;
     border-radius: 2rem;
     padding: 1.2rem;
@@ -114,6 +114,7 @@ body {
 .multiplayer-button button:hover, .singleplayer-button button:hover {
     border-color: #BB86FC;
     cursor: pointer;
+    opacity: 87%
 }
 
 .multiplayer-button button:focus, .singleplayer-button button:focus {
@@ -133,21 +134,19 @@ body {
     font-size: 2rem;
     opacity: 87%;
     margin-top: 30vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
 }
 
 .competitive-button button, .coop-button button {
     opacity: 60%;
     border-color: white;
-    -webkit-transition: border-color 150ms ease-in;
-    -moz-transition: border-color 150ms ease-in; 
-    -o-transition: border-color 150ms ease-in; 
-    transition: border-color 150ms ease-in;
+    -webkit-transition: border-color, opacity 150ms ease-in;
+    -moz-transition: border-color, opacity 150ms ease-in; 
+    -o-transition: border-color, opacity 150ms ease-in; 
+    transition: border-color, opacity 150ms ease-in;
     border-width: 0.15rem;;
     border-radius: 2rem;
     padding: 1.2rem;
-    width: 50%;
+    width: 40%;
     background: none;
     color: white;
     font-size: 2rem;
@@ -162,10 +161,12 @@ body {
 .competitive-button button:hover, .coop-button button:hover {
     border-color: #BB86FC;
     cursor: pointer;
+    opacity: 87%
 }
 
 .competitive-button button:focus, .coop-button button:focus {
     outline: none;
+    opacity: 87%
 }
 
 .tags-canvas {
@@ -198,7 +199,7 @@ body {
 }
 
 .tag-card {
-    opacity: 60%;
+    opacity: 70%;
     padding: 1rem;
     width: 15vw;
     border-style: solid;
@@ -210,6 +211,7 @@ body {
     -moz-transition: border-color 200ms ease-in; 
     -o-transition: border-color 200ms ease-in; 
     transition: border-color 200ms ease-in;
+    font-size: 1.5rem;
 }
 
 .tag-card:hover {
@@ -429,6 +431,8 @@ body {
 
     .multi-text {
         font-size: 1.5rem;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
 
     .competitive-button button, .coop-button button {
