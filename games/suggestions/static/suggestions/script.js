@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tags_grid.appendChild(card) 
         }
 
-        // Giving onclick for each tag, no idea why the () => syntax wasn't working
+        // Giving onclick for each tag
         var all_tags = document.querySelectorAll('.tag-card');
         for (var i = 0; i < all_tags.length; i++) {
             var tag = all_tags[i];
@@ -186,16 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         first_game.scrollIntoView(true);
                     })
                 }
-            } else {
-                // Do a proper alert or disable with onclick event listeners to check the amount of selected class name containing elements please please fabio don't forget this part please
-                alert('Please select some tags')
-            }  
+            } 
         }
         parent.appendChild(child)
     }
 
     function loadGame(game, number, length) {
-        // Do stuff with games ooga booga procrastination do it later
         const canvas = document.querySelector('.games')
         const element = document.createElement('div')
         const content_parent = document.createElement('div')

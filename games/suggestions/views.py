@@ -51,9 +51,9 @@ def db(request):
             image=image,
             tags=tags
         )
-        #game.save()
-        #print(f'{name} Added to database!')
-        sleep(1.1) #Fucking gay ass pussy ass low computing power ass shitty ass API server
+        game.save()
+        print(f'{name} Added to database!')
+        sleep(1.1) 
   
     return HttpResponse('Success')
 

@@ -181,6 +181,12 @@ body {
     text-align: center;
 }
 
+.tags-advice {
+    opacity: 60%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 .tags-grid {
     margin: 10vh;
     display: grid;
@@ -437,6 +443,10 @@ body {
     
     .canvas-text {
         font-size: 1.5rem;
+    }
+
+    .tags-advice {
+        font-size: 1rem;
     }
     
     .tags-grid {
