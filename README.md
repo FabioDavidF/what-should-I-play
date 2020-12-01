@@ -6,7 +6,7 @@
  The design is aimed to be minimalistic and highly focused on User Experience.
 
 ## Technologies used
-The back-end API was written using django, and the front end is pure JavaScript / CSS / HTML.
+The back-end API was written using django, and the front-end is pure JavaScript / CSS / HTML.
 
 ## How does it work?
 The heart of the project is a function called getGames, which queries the database in a (hopefully) smart way for games matching the tags given, taking in consideration how important a tag is, and its position in how many times it was voted in the steam store (For example: if a game has a tag, but it is the 28th most voted tag for the game, it won't be nearly as important as the game's number 1 tag).
