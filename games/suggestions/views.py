@@ -17,6 +17,8 @@ def index(request):
 def db(request):
     """
     Function used to construct database via the steamspy and the steamcdn API's
+
+    Will leave it here because I intend on using it as a daily price updater in the near future
     """
     f = open('suggestions/tops.txt', 'r')
     string = f.read()
@@ -177,35 +179,6 @@ def getGames(request):
         return JsonResponse({'has_items': False})
     else:
         return JsonResponse({'has_items': True, 'games': games_list})
-
-
-# Function I used to get games description from the steampowered API
-def descriptions(request):
-    games = Game.objects.all()
-    bad = 0
-    counter = 0
-    for game in games:
-        counter += 1
-        if counter >= 270:
-            app_id = game.app_id
-            response = requests.get(f'https://store.steampowered.com/api/appdetails?appids={app_id}')
-            try:
-                json = response.json()
-                if json[f'{app_id}']['success'] == True:
-                    raw = json[f'{app_id}']['data']['detailed_description']
-                    clean = BeautifulSoup(raw, 'lxml').text
-                    game.description = clean
-                    game.save()
-                    print(f'{game.name} Description added!')
-                    sleep(1.5)
-                else:
-                    bad += 1
-                    print(f'NO API AVAILABLE AT {app_id}')
-                    print(bad)
-            except:
-                print(f'Error to json at app {app_id}')
-            
-    return HttpResponse(status=200)
 
 def descriptions2(request):
     games = Game.objects.all()
