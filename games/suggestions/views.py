@@ -94,7 +94,29 @@ def getGames(request):
         'building': 2,
         'driving': 5,
         'loot': 3,
-        'mmo': 5
+        'mmo': 5,
+        'platformer': 5,
+        'survival': 3,
+        'team-based': 3,
+        'war': 3,
+        'strategy': 3,
+        'arenashooter': 4,
+        'medieval': 5,
+        'deckbuilding': 3,
+        'rts': 3,
+        'gore': 2,
+        'zombies': 2,
+        'horror': 2,
+        'puzzle': 3,
+        'action': 2,
+        'crafting': 2,
+        'futuristic': 3,
+        '2d': 4,
+        'indie': 4,
+        'driving': 5,
+        'racing': 4,
+        'turn-based': 3,
+        'choicesmatter': 4
     }
 
     for game in games:
@@ -113,7 +135,7 @@ def getGames(request):
                     
                     tag_position = game_tags.index(request_tag)
                     length = len(game_tags)
-                    max_score = 5
+                    max_score = 10
                     step = max_score / (length - 1)
                     position_value = (((length-1) - tag_position) * step)
 

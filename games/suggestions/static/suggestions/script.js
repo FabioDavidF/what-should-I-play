@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         tags_grid.innerHTML = ''
 
         if (kind === 'competitive') {
-            var tags = ['FPS', 'MOBA', 'Battle Royale', 'Sports', 'Fighting', 'Survival']
+            var tags = ['FPS', 'MOBA', 'Battle Royale','Card Game', 'Sports','Platformer', 'Fighting', 'Survival', 'Team-Based', 'War', 'Strategy','Arena Shooter', 'Medieval', 'Deck Building', 'RTS', 'Gore']
         } else if (kind === 'coop') {
-            var tags = ['FPS', 'RPG', 'Open World', 'Sandbox', 'Building', 'Survival', 'Looter Shooter', 'Driving', 'Story Rich', 'Loot', 'MMO']
+            var tags = ['FPS', 'RPG', 'Open World', 'Sandbox', 'Building', 'Survival', 'Looter Shooter', 'Driving', 'Story Rich', 'Loot', 'MMO', 'Strategy', 'Crafting', 'Action', 'Fighting', 'Zombies', 'Horror', 'Puzzle']
         } else if (kind === 'singleplayer') {
-            var tags = ['RPG', 'FPS', 'Open World', 'Hack And Slash', 'Looter Shooter', 'Survival', 'Shooter', 'Story Rich', 'Moddable', 'Exploration', 'Realistic', 'Adventure', 'Stealth', 'Anime']
+            var tags = ['RPG', 'FPS', 'Open World', 'Hack And Slash', 'Looter Shooter', 'Survival', 'Shooter', 'Story Rich', 'Moddable', 'Exploration', 'Realistic', 'Adventure', 'Stealth', 'Anime', 'Futuristic', '2D', 'Indie', 'Driving', 'Racing', 'Turn-Based', 'Choices Matter']
         }
 
         for (tag of tags) {

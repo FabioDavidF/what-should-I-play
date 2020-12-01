@@ -86,7 +86,7 @@ body {
     margin-top: 30vh;
     margin-bottom: 15vh;
     margin-left: 25vw;
-    margin-right: 25vw
+    margin-right: 25vw;
 }
 
 .multiplayer-button button, .singleplayer-button button {
@@ -133,6 +133,8 @@ body {
     font-size: 2rem;
     opacity: 87%;
     margin-top: 30vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .competitive-button button, .coop-button button {
@@ -145,7 +147,7 @@ body {
     border-width: 0.15rem;;
     border-radius: 2rem;
     padding: 1.2rem;
-    width: 25%;
+    width: 50%;
     background: none;
     color: white;
     font-size: 2rem;
