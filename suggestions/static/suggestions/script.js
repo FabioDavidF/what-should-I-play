@@ -131,12 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     var tags_string = tags_string.concat(`${tag},`)
                 }
                 var tags_string = tags_string.slice(0, -1)
-                console.log(tags_string)
                 if (kind === 'singleplayer') {
                     fetch(`get-games/?essentials=singleplayer&tags=${tags_string}`)
                     .then(response => response.json())
                     .then(games => {
-                        console.log(games)
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
@@ -155,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     fetch(`get-games/?essentials=competitive&tags=${tags_string}`)
                     .then(response => response.json())
                     .then(games => {
-                        console.log(games)
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
@@ -172,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
                     .then(response => response.json())
                     .then(games => {
-                        console.log(games)
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
