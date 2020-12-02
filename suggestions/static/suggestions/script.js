@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
             back.className = 'back'
             back.onclick = () => {
                 intro.scrollIntoView(true);
-                setTimeout(() => {clearPage(intro);}, 1500)
+                setTimeout(() => {clearPage(intro);}, 1000)
             }
             content_parent.appendChild(back)
         }
