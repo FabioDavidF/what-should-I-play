@@ -35,6 +35,7 @@ body {
 .intro .welcome {
     opacity: 87%;
     font-size: 3rem;
+    font-weight: normal;
 }
 
 .intro .welcome2 {

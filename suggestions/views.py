@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 import requests, json, operator
 import os
 from .models import Game
@@ -7,6 +7,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
+from django.shortcuts import reverse
 
 
 def index(request):
@@ -65,6 +66,10 @@ def getGames(request):
     Returns a json response with a list of games that best match
     the tags given in the 'tags' parameter on the query string
     """
+
+    if request.method != 'GET':
+        return HttpResponseRedirect(reverse('index'))
+    
     request_tags = request.GET.get('tags').split(',')
     essential_tags = request.GET.get('essentials').split(',')
     tag_amount = len(request_tags)
