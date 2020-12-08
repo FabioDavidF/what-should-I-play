@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (kind === 'competitive') {
             var tags = ['FPS', 'MOBA', 'Battle Royale','Card Game', 'Sports','Platformer', 'Fighting', 'Survival', 'Team-Based', 'War', 'Strategy','Arena Shooter', 'Medieval', 'Deck Building', 'RTS', 'Gore']
         } else if (kind === 'coop') {
-            var tags = ['FPS', 'RPG', 'Open World', 'Sandbox', 'Building', 'Survival', 'Looter Shooter', 'Driving', 'Story Rich', 'Loot', 'MMO', 'Strategy', 'Crafting', 'Action', 'Fighting', 'Zombies', 'Horror', 'Puzzle']
+            var tags = ['FPS', 'RPG', 'Open World', 'Sandbox', 'Building', 'Survival', 'Looter Shooter', 'Driving', 'Story Rich', 'Loot', 'Strategy', 'Crafting', 'Action', 'Fighting', 'Zombies', 'Horror', 'Puzzle']
         } else if (kind === 'singleplayer') {
             var tags = ['RPG', 'FPS', 'Open World', 'Hack And Slash', 'Looter Shooter', 'Survival', 'Shooter', 'Story Rich', 'Moddable', 'Exploration', 'Realistic', 'Adventure', 'Stealth', 'Anime', 'Futuristic', '2D', 'Indie', 'Driving', 'Racing', 'Turn-Based', 'Choices Matter']
         }
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                         
                         games_canvas.style.display = 'block';
-                        const first_game = document.getElementById('1')
+                        const first_game = document.getElementById('1');
                         first_game.scrollIntoView(true);
                     })
                 }
@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     fetch(`get-games/?essentials=co-op&tags=${tags_string}`)
                     .then(response => response.json())
                     .then(games => {
+                        if (games.has_items == false) {console.log('no games')}
                         const games_array = games.games
                         games_canvas_inner.innerHTML = ''
                         var c = 0
@@ -220,6 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         element_price.className = 'game-price'
         content_parent.appendChild(element_price)
+        const ad_div = document.createElement('div')
+        ad_div.className = 'ad-div'
+        ad_div.innerHTML = '' // Fill when adsense accepts
+        content_parent.appendChild(ad_div)
     
         if (number !== length) {
             const arrow_parent = document.createElement('div')
@@ -233,7 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 next_game.scrollIntoView(true);
             }
             arrow_parent.appendChild(arrow_child)
-            content_parent.appendChild(arrow_parent)
+            element.appendChild(content_parent)
+            element.appendChild(arrow_parent)
+            
         } else {
             const intro = document.querySelector('.first')
             const back = document.createElement('div')
@@ -244,8 +251,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {clearPage(intro);}, 1000)
             }
             content_parent.appendChild(back)
+            element.appendChild(content_parent)
         }
-        element.appendChild(content_parent)
+        
         canvas.appendChild(element)
     }
 })
