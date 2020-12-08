@@ -339,9 +339,10 @@ body {
 }
 
 .back {
-    margin-top: 30vh;
+    position: relative;
     text-align: center;
     margin-bottom: 0;
+    margin-top: 2vh;
     border: solid;
     border-color: white;
     border-width: 0.1rem;
@@ -499,8 +500,7 @@ body {
         max-width: 13vw;
     }
     
-    .back {
-        margin-top: 30vh;      
+    .back {    
         border-width: 0.1rem;;
         font-size: 1rem;
         margin-left: 5vw;
