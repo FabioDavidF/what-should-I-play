@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 """
 Django settings for games project.
@@ -124,3 +125,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+django-heroku.settings(locals())
