@@ -4,11 +4,7 @@ import requests, json, operator
 import os
 from .models import Game
 from time import sleep
-from bs4 import BeautifulSoup
-from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.options import Options
 from django.shortcuts import reverse
-import sqlite3
 
 
 def index(request):
