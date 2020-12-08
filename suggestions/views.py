@@ -100,6 +100,7 @@ def getGames(request):
         'platformer': 5,
         'survival': 3,
         'team-based': 3,
+        'cardgame': 5,
         'war': 3,
         'strategy': 3,
         'arenashooter': 4,
