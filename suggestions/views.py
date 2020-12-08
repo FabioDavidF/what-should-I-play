@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from django.shortcuts import reverse
+import sqlite3
 
 
 def index(request):
@@ -208,12 +209,13 @@ def descriptions2(request):
                 print(e)
     return HttpResponse(status=200)
 
-def saving(conn):
+def saving(request):
     """
     Query all rows in the tasks table
     :param conn: the Connection object
     :return:
     """
+    conn = sqlite3.connect('db.sqlite3')
     cur = conn.cursor()
     cur.execute("SELECT * FROM suggestions_game")
 
