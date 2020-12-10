@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const competitive_button = document.querySelector('.competitive-button-button');
     const coop_button = document.querySelector('.coop-button-button');
     const singleplayer_button = document.querySelector('.singleplayer-button-button');
+    const about_button = document.querySelector('.about-button')
+    const contact_button = document.querySelector('.contact-button');
+    const home_button = document.querySelector('.home-icon');
 
-    
+    const about_view = document.querySelector('.about-view');
     const player_choice = document.querySelector('.second');
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
@@ -18,13 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
         multi_choice.style.display = 'none';
         tags_canvas.style.display = 'none';
         games_canvas.style.display = 'none';
+        about_view.style.display = 'none';
 
         if (exception !== 0) {
             exception.style.display = 'block';
         } 
     }
 
-    clearPage();   
+    clearPage();
+    
+    about_button.onclick = () => {
+        clearPage(about_view)
+    }
+
+    home_button.onclick = () => {
+        clearPage();
+    }
 
     // Started button onclick to scroll to player choice
     started_button.onclick = () => {

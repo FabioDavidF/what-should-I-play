@@ -28,14 +28,7 @@ body {
     height: 7vh;
     width: 100%;
     overflow: hidden;
-
     background-color: rgb(40, 40, 40);
-
-    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 3s; /* Firefox < 16 */
-        -ms-animation: fadein 3s; /* Internet Explorer */
-         -o-animation: fadein 3s; /* Opera < 12.1 */
-            animation: fadein 3s;
 }
 
 .navbar li {
@@ -57,7 +50,27 @@ body {
 
 .navbar li a:hover {
     background-color: rgb(22, 22, 22);
-    
+    cursor: pointer;
+}
+
+.home-icon {
+    vertical-align: middle;
+}
+
+.home-icon img {
+    opacity: 87%;
+    max-height: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.home-icon img:hover {
+    cursor: pointer;
+}
+
+.about-view {
+    height: 100vh;
+    background-color: #121212;
 }
 
 .first {
