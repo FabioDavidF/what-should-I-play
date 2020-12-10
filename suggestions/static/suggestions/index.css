@@ -508,18 +508,22 @@ body {
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
+        font-size: 0.8rem;
     }
     
-    .about-intro {
-        font-size: 0.6rem;
+
+    .contact-text {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 0.8rem;
     }
     
-    .about-works {
-        font-size: 0.6rem;
-    }
-    
-    .about-tips {
-        font-size: 0.6rem;
+    .contact-intro {
+        padding: 2rem;
+        background-color:  rgb(40, 40, 40);
+        border-radius: 1rem;
+        overflow-wrap: break-word;
     }
 
     .intro .welcome {
@@ -570,7 +574,7 @@ body {
     }
     
     .canvas-text {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .tags-advice {
