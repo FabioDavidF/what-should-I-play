@@ -100,3 +100,6 @@ def descriptions2(request):
                 print(e)
     return HttpResponse(status=200)
 ```
+
+## Deploying and Administrating system
+I've recently deployed the project and had the opportunity to learn about hosting and administrating the server, I am learning a lot about SEO, ads and monetization in general in this final stretch before and during launch of the website!
