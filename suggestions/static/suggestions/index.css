@@ -111,6 +111,32 @@ body {
     border-radius: 1rem;
 }
 
+.contact-view {
+    min-height: 100vh;
+    margin-top: 7vh;
+    padding-top: 5vh;
+
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+}
+
+.contact-text {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: white;
+    opacity: 87%;
+}
+
+.contact-intro {
+    padding: 2rem;
+    background-color:  rgb(40, 40, 40);
+    border-radius: 1rem;
+}
+
 .first {
     height: 100vh;
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */

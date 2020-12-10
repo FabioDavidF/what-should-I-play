@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const home_button = document.querySelector('.home-icon');
 
     const about_view = document.querySelector('.about-view');
+    contact_view = document.querySelector('.contact-view');
     const welcome_view = document.querySelector('.first');
     const player_choice = document.querySelector('.second');
     const multi_choice = document.querySelector('.third-multi');
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tags_canvas.style.display = 'none';
         games_canvas.style.display = 'none';
         about_view.style.display = 'none';
+        contact_view.style.display = 'none';
 
         if (exception !== 0) {
             exception.style.display = 'block';
@@ -40,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     home_button.onclick = () => {
         clearPage(welcome_view);
         document.title = 'What Should I Play';
+    }
+
+    contact_button.onclick = () => {
+        clearPage(contact_view);
+        document.title = 'Contact - What Should I Play'
     }
 
     // Started button onclick to scroll to player choice
