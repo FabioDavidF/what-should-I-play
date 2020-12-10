@@ -264,13 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
             element.appendChild(arrow_parent)
             
         } else {
-            const intro = document.querySelector('.first')
             const back = document.createElement('div')
             back.innerHTML = 'Back to start'
             back.className = 'back'
             back.onclick = () => {
-                intro.scrollIntoView(true);
-                setTimeout(() => {clearPage(intro);}, 1000)
+                welcome_view.style.display = 'block';
+                welcome_view.scrollIntoView(true);
+                setTimeout(() => {clearPage(welcome_view);}, 1000)
             }
             content_parent.appendChild(back)
             element.appendChild(content_parent)
