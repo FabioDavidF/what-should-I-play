@@ -8,9 +8,38 @@
 {% endblock %}
 {% block body %}
     <ul class="navbar">
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
+        <li class='home-icon'><img src="../../static/suggestions/homeicon.png" alt="Home"></li>
+        <li><a class='about-button'>About</a></li>
+        <li><a class='contact-button'>Contact</a></li>
     </ul>
+    <div class="about-view">
+        <div class="about-text">
+
+            <div class="about-intro">
+                <h2>
+                    What is What Should I Play?
+                </h2>
+                <p>
+                    What should I play is a website that aims to suggest matching games based on the user's preferred tags for those of us who feel like they have nothing to play amidst the ocean of games that steam provides, simple as that!
+                </p>
+                
+            </div>
+
+            <div class="about-works">
+                <h2>But how does it work?</h2>
+                <p>
+                    When you select the tags you like and submit them, our server passes them through an algorithm and the algorithm returns games that have the highest score, and that score takes in account the importance of a tag, and in what place that tag is in that game.
+                </p>
+            </div>
+
+            <div class="about-tips">
+                <h2>Getting Optimal Suggestions</h2>
+                <p>
+                    In order to get games that you are actually looking for, you should select tags that are possible to coexist in the same game, otherwise, if you, for example, select "Driving" and "Anime", since there are no decent games (yet) that have both characteristics, it's gonna give you either driving or anime games.
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="first">
         <div class="intro">
             <h1 class='welcome'>Welcome to What Should I Play</h1>
