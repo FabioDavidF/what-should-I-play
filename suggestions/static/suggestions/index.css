@@ -14,6 +14,50 @@ body {
     font-family: 'Varela';
     color: white;
     max-width: 100%;
+    margin: 0;
+}
+
+.navbar {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    height: 7vh;
+    width: 100%;
+    overflow: hidden;
+
+    background-color: rgb(40, 40, 40);
+
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+}
+
+.navbar li {
+    float: left;
+    height: 100%;
+}
+
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    opacity: 87%;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 1.5rem;
+    height: 100%;
+}
+
+.navbar li a:hover {
+    background-color: rgb(22, 22, 22);
+    
 }
 
 .first {
@@ -376,6 +420,10 @@ body {
 @media only screen and (max-width:479px) {
     body {
         background-image: url('mobile_background.jpg');
+    }
+
+    .navbar li a {
+        font-size: 0.8rem;
     }
 
     .intro .welcome {
