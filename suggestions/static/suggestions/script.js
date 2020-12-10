@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const contact_button = document.querySelector('.contact-button');
     const home_button = document.querySelector('.home-icon');
 
+    const navbar = document.querySelector('.navbar');
     const about_view = document.querySelector('.about-view');
-    contact_view = document.querySelector('.contact-view');
+    const contact_view = document.querySelector('.contact-view');
     const welcome_view = document.querySelector('.first');
     const player_choice = document.querySelector('.second');
     const multi_choice = document.querySelector('.third-multi');
@@ -269,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             back.className = 'back'
             back.onclick = () => {
                 welcome_view.style.display = 'block';
-                welcome_view.scrollIntoView(true);
+                navbar.scrollIntoView(true);
                 setTimeout(() => {clearPage(welcome_view);}, 1000)
             }
             content_parent.appendChild(back)
