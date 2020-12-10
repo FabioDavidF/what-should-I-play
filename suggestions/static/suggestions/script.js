@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const home_button = document.querySelector('.home-icon');
 
     const about_view = document.querySelector('.about-view');
+    const welcome_view = document.querySelector('.first');
     const player_choice = document.querySelector('.second');
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const games_canvas_inner = document.querySelector('.games')
 
     function clearPage(exception=0) {
+        welcome_view.style.display = 'none';
         player_choice.style.display = 'none';
         multi_choice.style.display = 'none';
         tags_canvas.style.display = 'none';
@@ -28,23 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
         } 
     }
 
-    clearPage();
+    clearPage(welcome_view);
     
     about_button.onclick = () => {
         clearPage(about_view)
     }
 
     home_button.onclick = () => {
-        clearPage();
+        clearPage(welcome_view);
     }
 
     // Started button onclick to scroll to player choice
-    started_button.onclick = () => {
-        // Clearing out rest of the site just in case
-        clearPage();
-
+    started_button.onclick = () => {        
+        clearPage(welcome_view);
         player_choice.style.display = 'block';
         player_choice.scrollIntoView(true);
+
     }
 
     // Multiplayer button onlick to scroll to multi choice
