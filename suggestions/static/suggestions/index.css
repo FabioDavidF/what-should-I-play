@@ -298,6 +298,7 @@ body {
     justify-content: center;
     max-width: 100%;
     float: left;
+    position: relative;
 }
 
 .canvas-text {
@@ -318,7 +319,7 @@ body {
     display: grid;
     grid-gap: 2rem;
     justify-content: space-evenly;
-    grid-template-columns:  15vw 15vw 15vw;
+    grid-template-columns:  15vw 15vw 15vw 15vw;
 }
 
 .tag-card {
@@ -327,7 +328,7 @@ body {
     width: 15vw;
     border-style: solid;
     border-color: white;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     text-align: center;
     border-width: 0.15rem;
     -webkit-transition: border-color 200ms ease-in;
@@ -344,6 +345,9 @@ body {
 .submitter-parent {
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
 }
 
 .submitter {
@@ -586,6 +590,8 @@ body {
         grid-gap: 0.5rem;
         justify-content: space-evenly;
         grid-template-columns:  auto auto auto;
+        margin-left: 7vw;
+        margin-right: 5vw;
     }
     
     .tag-card {
@@ -593,6 +599,8 @@ body {
         font-size: .6rem;
         border-radius: 1.5rem;
         text-overflow: ellipsis;
+        width: 50%;
+
     }
 
     .submitter {
