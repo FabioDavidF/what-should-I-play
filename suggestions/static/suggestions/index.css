@@ -54,22 +54,25 @@ body {
 }
 
 .home-icon {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
     vertical-align: middle;
 }
 
 .home-icon img {
     opacity: 87%;
-    max-height: 80%;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    max-height: 70%;
+    margin-top: 15%;
+    margin-bottom: 15%;
 }
 
 .home-icon img:hover {
     cursor: pointer;
+    background-color: rgb(22, 22, 22);
 }
 
 .about-view {
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 7vh;
     padding-top: 5vh;
 
@@ -472,6 +475,24 @@ body {
 
     .navbar li a {
         font-size: 0.8rem;
+    }
+
+    .about-text {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .about-intro {
+        font-size: 0.6rem;
+    }
+    
+    .about-works {
+        font-size: 0.6rem;
+    }
+    
+    .about-tips {
+        font-size: 0.6rem;
     }
 
     .intro .welcome {

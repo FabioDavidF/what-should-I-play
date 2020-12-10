@@ -34,10 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     about_button.onclick = () => {
         clearPage(about_view)
+        document.title = 'About - What Should I Play';
     }
 
     home_button.onclick = () => {
         clearPage(welcome_view);
+        document.title = 'What Should I Play';
     }
 
     // Started button onclick to scroll to player choice
