@@ -665,8 +665,6 @@ body {
 }
 
 
-
-
 /* defining animations for all browsers  */
 @keyframes fadein {
     from { opacity: 0; }
