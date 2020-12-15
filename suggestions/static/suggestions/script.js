@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
     const tags_grid = document.querySelector('.tags-grid')
+    const control = document.querySelector('.control');
     const games_canvas = document.querySelector('.fourth')
     const games_canvas_inner = document.querySelector('.games')
 
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         games_canvas.style.display = 'none';
         about_view.style.display = 'none';
         contact_view.style.display = 'none';
+        control.style.display = 'none';
+
 
         if (exception !== 0) {
             exception.style.display = 'block';
@@ -206,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         first_game.scrollIntoView(true);
                     })
                 }
+                control.style.display = 'block';
             } 
         }
         parent.appendChild(child)
