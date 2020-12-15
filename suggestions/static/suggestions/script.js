@@ -244,10 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         element_price.className = 'game-price'
         content_parent.appendChild(element_price)
-        const ad_div = document.createElement('div')
-        ad_div.className = 'ad-div'
-        ad_div.innerHTML = '' // Fill when adsense accepts
-        content_parent.appendChild(ad_div)
     
         if (number !== length) {
             const arrow_parent = document.createElement('div')
