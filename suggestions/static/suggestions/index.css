@@ -17,6 +17,8 @@ body {
     margin: 0;
 }
 
+
+
 .navbar {
     z-index: 1;
     position: absolute;
@@ -157,6 +159,10 @@ body {
     opacity: 87%;
     font-size: 3rem;
     font-weight: normal;
+}
+
+.mobile-br {
+    display: none;
 }
 
 .intro .welcome2 {
@@ -539,6 +545,10 @@ body {
         font-size: 2rem;
     }
 
+    .mobile-br {
+        display: block;
+    }
+
     .intro .welcome2{
         font-size: 1rem;
     }
@@ -612,6 +622,11 @@ body {
         width: 50vw;
         border-width: 0.1rem;
         font-size: 1.5rem;
+    }
+
+    .control {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .games {
