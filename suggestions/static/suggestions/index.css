@@ -327,7 +327,7 @@ body {
 
 .tags-grid {
     margin-top: 5vh;
-
+    max-height: 70%;
     display: grid;
     grid-gap: 2rem;
     justify-content: space-evenly;
@@ -357,8 +357,7 @@ body {
 .submitter-parent {
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 5vh;
+    margin-top: 5vh;
     width: 100%;
 }
 
@@ -598,6 +597,8 @@ body {
 
     .tags-advice {
         font-size: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     
     .tags-grid {
