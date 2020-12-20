@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contact_view = document.querySelector('.contact-view');
     const welcome_view = document.querySelector('.first');
     const player_choice = document.querySelector('.second');
+    const player_control = document.querySelector('.player-control');
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
     const tags_grid = document.querySelector('.tags-grid')
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         about_view.style.display = 'none';
         contact_view.style.display = 'none';
         control.style.display = 'none';
+        player_control.style.display = 'none';
 
 
         if (exception !== 0) {
@@ -66,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clearing out rest of the site just in case
         clearPage(player_choice);
 
+        player_control.style.display = 'block';
         multi_choice.style.display = 'block';
         multi_choice.scrollIntoView(true);
     }
@@ -96,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     singleplayer_button.onclick = () => {
         // Clearing out rest of the site just in case
         clearPage(player_choice);
+        player_control.style.display = 'block';
 
         tags_canvas.style.display = 'block';
         tags_canvas.scrollIntoView(true);
