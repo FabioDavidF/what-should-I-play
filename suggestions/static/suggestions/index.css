@@ -220,11 +220,12 @@ body {
 .player-control {
     justify-content: center;
     margin-top: 10vh;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .control {
+    margin-top: 10vh;
     margin-left: 20%;
     margin-right: 20%;
     justify-content: center;
@@ -574,6 +575,13 @@ body {
     
     .player-choice {
         margin-bottom: 30vh;
+        margin-left: 4vw;
+        margin-right: 4vw;
+    }
+
+    .player-control {
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .multiplayer-button button, .singleplayer-button button {
