@@ -226,10 +226,10 @@ body {
 
 .control {
     margin-top: 10vh;
-    margin-left: 20%;
-    margin-right: 20%;
-    justify-content: center;
+
+
 }
+
 
 
 .multiplayer-button button, .singleplayer-button button {
@@ -311,6 +311,12 @@ body {
     outline: none;
     opacity: 87%
 }
+
+.tags-div {
+    float:left;
+    max-width: 100%;
+}
+
 
 .tags-canvas {
     height: 100vh;
