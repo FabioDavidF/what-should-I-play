@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {clearPage(welcome_view);}, 1000)
             }
             content_parent.appendChild(back)
-            element.appendChild(content_parent)
+            element.appendChild(content_parent)    
         }
         
         canvas.appendChild(element)

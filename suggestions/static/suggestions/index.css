@@ -216,6 +216,14 @@ body {
     margin-left: 10vw;
     margin-right: 10vw;
 }
+
+.player-control {
+    justify-content: center;
+    margin-top: 10vh;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .control {
     margin-left: 20%;
     margin-right: 20%;
@@ -311,6 +319,7 @@ body {
     max-width: 100%;
     float: left;
     position: relative;
+    margin-top: 20vh;
 }
 
 .canvas-text {
