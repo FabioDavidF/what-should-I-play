@@ -224,14 +224,6 @@ body {
     margin-right: 20%;
 }
 
-.control {
-    margin-top: 10vh;
-
-
-}
-
-
-
 .multiplayer-button button, .singleplayer-button button {
     opacity: 60%;
     border-color: white;
@@ -312,9 +304,16 @@ body {
     opacity: 87%
 }
 
-.tags-div {
-    float:left;
-    max-width: 100%;
+.tags-control {
+    float: left;
+    height: 10vh;
+    width: 100%;
+    margin-top: 20vh;
+}
+
+.tags-control-2 {
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 
@@ -324,7 +323,7 @@ body {
     font-size: 2rem;
     justify-content: center;
     max-width: 100%;
-    float: left;
+    float: right;
     position: relative;
     margin-top: 20vh;
 }
@@ -648,9 +647,13 @@ body {
         font-size: 1.5rem;
     }
 
-    .control {
-        margin-left: 0;
-        margin-right: 0;
+    .tags-control {
+        margin-top: 5vh;
+    }
+    
+    .tags-control-2 {
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
 
     .games {

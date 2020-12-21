@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const multi_choice = document.querySelector('.third-multi');
     const tags_canvas = document.querySelector('.tags-canvas')
     const tags_grid = document.querySelector('.tags-grid')
-    const control = document.querySelector('.control');
+    const control = document.querySelector('.tags-control');
     const games_canvas = document.querySelector('.fourth')
     const games_canvas_inner = document.querySelector('.games')
 
