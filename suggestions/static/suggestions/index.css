@@ -611,6 +611,7 @@ body {
         justify-content: center;
         max-width: 100%;
         float: left;
+        margin-top: 30vh;
     }
     
     .canvas-text {
@@ -657,7 +658,7 @@ body {
     }
 
     .games {
-        margin-top: 30vh;
+        margin-top: 45vh;
         margin-bottom: 10vh;
         margin-left: 0;
         margin-right: 0;
