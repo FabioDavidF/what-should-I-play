@@ -634,7 +634,7 @@ body {
     }
     
     .tag-card {
-        border-width: 0.07rem;
+        border-width: 0.05rem;
         font-size: .6rem;
         border-radius: 1.5rem;
         text-overflow: ellipsis;
