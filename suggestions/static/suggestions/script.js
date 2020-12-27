@@ -254,19 +254,17 @@ document.addEventListener('DOMContentLoaded', () => {
         content_parent.appendChild(element_price)
     
         if (number !== length) {
-            const arrow_parent = document.createElement('div')
-            arrow_parent.className = 'arrow-parent'
-            const arrow_child = document.createElement('img')
-            arrow_child.src = "../../static/suggestions/arrow.png"
-            arrow_child.className = 'arrow-child'
-            arrow_child.onclick = () => {
+            const next_button = document.createElement('div')
+            next_button.className = 'next-game'
+            next_button.innerHTML = 'Next Game'
+            next_button.onclick = () => {
                 const next_number = number + 1
                 const next_game = document.getElementById(`${next_number}`)
                 next_game.scrollIntoView(true);
             }
-            arrow_parent.appendChild(arrow_child)
+            content_parent.appendChild(next_button)
             element.appendChild(content_parent)
-            element.appendChild(arrow_parent)
+
             
         } else {
             const back = document.createElement('div')

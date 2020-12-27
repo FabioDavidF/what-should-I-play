@@ -489,6 +489,34 @@ body {
     cursor: pointer;
 }
 
+.next-game {
+    position: relative;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid;
+    border-color: white;
+    border-width: 0.1rem;
+    opacity: 87%;
+    border-radius: 2rem;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+    font-family: inherit;
+    -webkit-transition: border-color 200ms ease-in;
+    -moz-transition: border-color 200ms ease-in; 
+    -o-transition: border-color 200ms ease-in; 
+    transition: border-color 200ms ease-in;
+    width: 50%;
+}
+
+.next-game:hover {
+    cursor: pointer;
+    border-color: #BB86FC;
+}
+
 .back {
     position: relative;
     text-align: center;
@@ -698,6 +726,12 @@ body {
         padding: 5vw;
     }
 
+    .next-game {
+        margin-top: 10vh;
+        border-width: 0.02rem;
+        font-size: 1rem;
+        width: 70%;
+    }
     
     .arrow-child {
         max-width: 13vw;
